@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* plantilla grid para la pagina */
+#plantilla {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "menu menu menu" "cuerpo cuerpo cuerpo" "cuerpo cuerpo cuerpo" "pie pie pie";
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+}
+
+/* fin plantilla grid para la pagina */
+/* configuracion de  header para todas las paginas */
+header {
+  height: 110%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: menu;
+  background-color: #E1D9CF;
+  color: white;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu li {
+  display: inline;
+  margin: 10px;
+}
+
+.menu__logo {
+  width: 200px;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__item:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.menu__logo:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.menu__item a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  padding: 20px;
+}
+
+/* fin de configuracion de header para todas las paginas */
+/* configuracion pie de pagina para todas las paginas */
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: pie;
+}
+
+.pie {
+  background-color: #C1A6A0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 10px;
+}
+
+.redes {
+  height: 50px;
+}
+
+/* fin configuracion pie de pagina para todas las paginas */
+/* seccion  principal del index */
+.slogan {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: cuerpo;
+  height: 1000px;
+  background-image: url("../recursos/imagenes/siriamainfondo.png");
+  background-size: 900px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slogan__cubo {
+  border: solid;
+  border-radius: 10%;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+}
+
+.slogan__cubo h1 {
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* fin seccion  principal del index */
+/* propiedades pantalla de productos */
+.cuerpoProduct {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: cuerpo;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cuboProd {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "foto titulo" "foto info";
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  margin: 5%;
+  border: solid;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+  font-size: 150%;
+  max-width: 1300px;
+}
+
+.cuboProd__titulo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: titulo;
+  margin-top: 30px;
+}
+
+.cuboProd__img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: foto;
+  margin: 10px;
+}
+
+.cuboProd__info {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: info;
+}
+
+.cuboProd__info p {
+  margin-bottom: 3%;
+}
+
+/* fin propiedades pantalla de productos */
+/* propiedades formulario */
+#contact {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: cuerpo;
+}
+
+.contacto {
+  margin: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../recursos/imagenes/siriamainfondo.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.contacto__datosVarios {
+  margin: 20px;
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+}
+
+.contacto__mapa {
+  margin: 10px;
+  padding: 20px;
+  border: solid;
+  width: 600px;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formulario {
+  margin: 10px;
+  width: 900px;
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+}
+
+.formulario__boton {
+  margin-top: 10px;
+  width: 150px;
+}
+/*# sourceMappingURL=style.css.map */

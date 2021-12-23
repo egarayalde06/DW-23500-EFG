@@ -1,0 +1,22 @@
+{
+  "name": "dw-23500-efg",
+  "version": "1.0.0",
+  "description": "este es un proyecto con sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egarayalde06/DW-23500-EFG.git"
+  },
+  "keywords": [
+    "Sass"
+  ],
+  "author": "EduGara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egarayalde06/DW-23500-EFG/issues"
+  },
+  "homepage": "https://github.com/egarayalde06/DW-23500-EFG#readme"
+}

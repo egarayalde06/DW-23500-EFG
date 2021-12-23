@@ -1,0 +1,221 @@
+$mainColor: #E1D9CF;
+$mainColorTransparent: #e1d9cfd0;
+$SecondColor:#C1A6A0;
+$borderColor: #c1a6a069;
+
+
+*{
+    padding: 0;
+    margin : 0;
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+/* plantilla grid para la pagina */
+
+#plantilla{
+    display: grid;
+    grid-template-areas:
+    "menu menu menu"
+    "cuerpo cuerpo cuerpo"
+    "cuerpo cuerpo cuerpo"
+    "pie pie pie";
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(4,auto);
+
+}
+/* fin plantilla grid para la pagina */
+
+/* configuracion de  header para todas las paginas */
+
+header{
+    height: 110%;
+    grid-area: menu;
+    background-color: $mainColor;
+    color: white;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & li{
+        display: inline;
+        margin: 10px;
+
+    }
+    &__logo{
+        width: 200px;
+    }
+
+    &__item{
+        list-style: none;
+    }
+
+    &__item:hover{
+        transform: scale(1.5);
+    }
+    &__logo:hover{
+        transform: scale(1.2);
+    }
+
+    &__item a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 200%;
+        padding: 20px;
+    }
+
+}
+
+/* fin de configuracion de header para todas las paginas */
+
+/* configuracion pie de pagina para todas las paginas */
+footer{
+    grid-area: pie;
+}
+.pie{
+    background-color: $SecondColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 10px;
+}
+.redes{
+    height: 50px;
+}
+/* fin configuracion pie de pagina para todas las paginas */
+
+/* seccion  principal del index */
+.slogan{
+    grid-area: cuerpo;
+    height: 1000px;
+    background-image:url("../recursos/imagenes/siriamainfondo.png") ;
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__cubo{
+        border: solid;
+        border-radius: 10%;
+        border-color:$borderColor;
+        background-color: $mainColorTransparent;
+    
+    }
+    &__cubo h1{
+        max-width: 1200px;
+        text-align: center;
+    }
+
+}
+
+/* fin seccion  principal del index */
+
+/* propiedades pantalla de productos */
+
+.cuerpoProduct{
+    grid-area: cuerpo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cuboProd{
+    display: grid;
+    grid-template-areas:
+    "foto titulo"
+    "foto info";
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    margin: 5%;
+    border: solid;
+    border-color:$borderColor;
+    background-color: $mainColorTransparent;
+    font-size: 150%;
+    max-width: 1300px;
+    
+    &__titulo{
+        grid-area: titulo;
+        margin-top: 30px;
+    }
+
+    &__img{
+        grid-area: foto;
+        margin: 10px;
+    }
+
+    &__info{
+        grid-area: info;
+    }
+
+    &__info p{
+        margin-bottom: 3%;
+    }
+
+}
+
+
+
+/* fin propiedades pantalla de productos */
+
+/* propiedades formulario */
+
+#contact{
+    grid-area: cuerpo;
+}
+.contacto{
+    
+
+    margin: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image:url("../recursos/imagenes/siriamainfondo.png") ;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    &__datosVarios{
+        margin: 20px;
+        border: solid;
+        display: flex;
+        flex-direction: column;
+        border-color:$borderColor;
+        background-color: $mainColorTransparent;
+    }
+
+    &__mapa{
+        margin: 10px;
+        padding: 20px;
+        border: solid;
+        width: 600px;
+        border-color:$borderColor;
+        background-color:$mainColorTransparent;
+        display:flex;
+        align-items: center;
+    
+    }
+
+}
+
+.formulario{
+    margin: 10px;
+    width: 900px;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    border-color:$borderColor;
+    background-color: $mainColorTransparent;
+    
+    &__boton{
+        margin-top: 10px;
+        width:150px;
+    }
+
+}
+

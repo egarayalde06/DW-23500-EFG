@@ -1,3 +1,13 @@
+@charset "UTF-8";
+/* agregando maps para back ground de header y footer*/
+.bk--mainColorBG {
+  background-color: #E1D9CF;
+}
+
+.bk--SecondColorBG {
+  background-color: #C1A6A0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -23,7 +33,6 @@ header {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: menu;
-  background-color: #E1D9CF;
   color: white;
 }
 
@@ -80,7 +89,6 @@ footer {
 }
 
 .pie {
-  background-color: #C1A6A0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,6 +208,7 @@ footer {
 
 /* fin propiedades pantalla de productos */
 /* propiedades formulario */
+/* mixin para tamaños de mapa*/
 #contact {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
@@ -242,8 +251,8 @@ footer {
 .contacto__mapa {
   margin: 10px;
   padding: 20px;
-  border: solid;
   width: 600px;
+  border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
   display: -webkit-box;
@@ -267,10 +276,15 @@ footer {
           flex-direction: column;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
+  /* uso de extend para segundo boton*/
 }
 
-.formulario__boton {
+.formulario__boton__enviar, .formulario__boton__cancelar {
   margin-top: 10px;
   width: 150px;
+}
+
+.formulario__boton__cancelar {
+  background-color: #C1A6A0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,18 @@ $mainColorTransparent: #e1d9cfd0;
 $SecondColor:#C1A6A0;
 $borderColor: #c1a6a069;
 
+/* agregando maps para back ground de header y footer*/
+$colores: (
+    mainColorBG: #E1D9CF,
+    SecondColorBG:#C1A6A0
+
+);
+
+@each $valor, $color in $colores{
+    .bk--#{$valor}{
+        background-color:$color;
+    }
+}
 
 *{
     padding: 0;
@@ -31,7 +43,6 @@ $borderColor: #c1a6a069;
 header{
     height: 110%;
     grid-area: menu;
-    background-color: $mainColor;
     color: white;
 }
 .menu{
@@ -76,7 +87,6 @@ footer{
     grid-area: pie;
 }
 .pie{
-    background-color: $SecondColor;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -166,12 +176,19 @@ footer{
 
 /* propiedades formulario */
 
+/* mixin para tamaños de mapa*/
+@mixin tamaniosMapa ($margen,$relleno,$ancho){
+    margin: $margen;
+    padding: $relleno;
+    width: $ancho;
+    
+}
+
 #contact{
     grid-area: cuerpo;
 }
 .contacto{
     
-
     margin: 10vh;
     display: flex;
     flex-direction: column;
@@ -190,10 +207,8 @@ footer{
     }
 
     &__mapa{
-        margin: 10px;
-        padding: 20px;
+        @include tamaniosMapa(10px,20px,600px);
         border: solid;
-        width: 600px;
         border-color:$borderColor;
         background-color:$mainColorTransparent;
         display:flex;
@@ -212,9 +227,14 @@ footer{
     border-color:$borderColor;
     background-color: $mainColorTransparent;
     
-    &__boton{
+    &__boton__enviar{
         margin-top: 10px;
         width:150px;
+    }
+    /* uso de extend para segundo boton*/
+    &__boton__cancelar{
+        @extend .formulario__boton__enviar;
+        background-color:$SecondColor ;
     }
 
 }

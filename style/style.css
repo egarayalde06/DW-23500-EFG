@@ -215,7 +215,6 @@ footer {
 }
 
 .contacto {
-  margin: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,9 +225,6 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../recursos/imagenes/siriamainfondo.png");
-  background-repeat: no-repeat;
-  background-size: auto;
 }
 
 .contacto__datosVarios {
@@ -248,7 +244,7 @@ footer {
 .contacto__mapa {
   margin: 10px;
   padding: 20px;
-  width: 75%;
+  width: auto;
   border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
@@ -262,7 +258,7 @@ footer {
 
 .formulario {
   margin: 10px;
-  width: 70%;
+  width: 50%;
   border: solid;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -276,12 +272,8 @@ footer {
   /* uso de extend para segundo boton*/
 }
 
-.formulario__boton__enviar, .formulario__boton__cancelar {
+.formulario__boton__enviar {
   margin-top: 10px;
-  width: 150px;
-}
-
-.formulario__boton__cancelar {
-  background-color: #C1A6A0;
+  width: 75px;
 }
 /*# sourceMappingURL=style.css.map */

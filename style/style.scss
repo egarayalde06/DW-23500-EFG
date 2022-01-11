@@ -41,7 +41,8 @@ $colores: (
 /* configuracion de  header para todas las paginas */
 
 header{
-    height: 110%;
+    height: 100%;
+    width: auto;
     grid-area: menu;
     color: white;
 }
@@ -56,7 +57,7 @@ header{
 
     }
     &__logo{
-        width: 200px;
+        width: 50%;
     }
 
     &__item{
@@ -137,34 +138,44 @@ footer{
 }
 
 .cuboProd{
-    display: grid;
-    grid-template-areas:
-    "foto titulo"
-    "foto info";
-    grid-template-columns: 300px auto;
-    grid-template-rows: repeat(2,auto);
+    display: flex;
+    flex-direction: column;
     margin: 5%;
     border: solid;
     border-color:$borderColor;
     background-color: $mainColorTransparent;
     font-size: 150%;
-    max-width: 1300px;
+    max-width: 1100px;
+    align-items: center;
+    // display: grid;
+    // grid-template-areas:
+    // "foto"
+    // "titulo"
+    // "info";
+    // grid-template-columns:  auto;
+    // grid-template-rows: repeat(3,auto);
+    // margin: 5%;
+    // border: solid;
+    // border-color:$borderColor;
+    // background-color: $mainColorTransparent;
+    // font-size: 150%;
+    // max-width: 1300px;
     
     &__titulo{
-        grid-area: titulo;
+        // grid-area: titulo;
         margin-left: 50px;
         margin-top: 30px;
     }
 
     &__img{
         width: 300px;
-        grid-area: foto;
+        // grid-area: foto;
         margin: 10px;
         
     }
 
     &__info{
-        grid-area: info;
+        // grid-area: info;
         margin-left: 50px;
         
     }

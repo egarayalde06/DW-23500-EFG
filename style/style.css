@@ -28,7 +28,8 @@
 /* fin plantilla grid para la pagina */
 /* configuracion de  header para todas las paginas */
 header {
-  height: 110%;
+  height: 100%;
+  width: auto;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -54,7 +55,7 @@ header {
 }
 
 .menu__logo {
-  width: 200px;
+  width: 50%;
 }
 
 .menu__item {
@@ -166,42 +167,35 @@ footer {
 }
 
 .cuboProd {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "foto titulo" "foto info";
-  -ms-grid-columns: 300px auto;
-      grid-template-columns: 300px auto;
-  -ms-grid-rows: (auto)[2];
-      grid-template-rows: repeat(2, auto);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 5%;
   border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
   font-size: 150%;
-  max-width: 1300px;
+  max-width: 1100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cuboProd__titulo {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: titulo;
   margin-left: 50px;
   margin-top: 30px;
 }
 
 .cuboProd__img {
   width: 300px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  grid-area: foto;
   margin: 10px;
 }
 
 .cuboProd__info {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: info;
   margin-left: 50px;
 }
 

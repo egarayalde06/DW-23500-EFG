@@ -141,7 +141,7 @@ footer{
     grid-template-areas:
     "foto titulo"
     "foto info";
-    grid-template-columns: repeat(2,auto);
+    grid-template-columns: 300px auto;
     grid-template-rows: repeat(2,auto);
     margin: 5%;
     border: solid;
@@ -152,16 +152,21 @@ footer{
     
     &__titulo{
         grid-area: titulo;
+        margin-left: 50px;
         margin-top: 30px;
     }
 
     &__img{
+        width: 300px;
         grid-area: foto;
         margin: 10px;
+        
     }
 
     &__info{
         grid-area: info;
+        margin-left: 50px;
+        
     }
 
     &__info p{
@@ -207,7 +212,7 @@ footer{
     }
 
     &__mapa{
-        @include tamaniosMapa(10px,20px,600px);
+        @include tamaniosMapa(10px,20px,75%);
         border: solid;
         border-color:$borderColor;
         background-color:$mainColorTransparent;
@@ -220,7 +225,7 @@ footer{
 
 .formulario{
     margin: 10px;
-    width: 900px;
+    width: 70%;
     border: solid;
     display: flex;
     flex-direction: column;

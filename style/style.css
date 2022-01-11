@@ -169,8 +169,8 @@ footer {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "foto titulo" "foto info";
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
+  -ms-grid-columns: 300px auto;
+      grid-template-columns: 300px auto;
   -ms-grid-rows: (auto)[2];
       grid-template-rows: repeat(2, auto);
   margin: 5%;
@@ -185,10 +185,12 @@ footer {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: titulo;
+  margin-left: 50px;
   margin-top: 30px;
 }
 
 .cuboProd__img {
+  width: 300px;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
@@ -200,6 +202,7 @@ footer {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: info;
+  margin-left: 50px;
 }
 
 .cuboProd__info p {
@@ -251,7 +254,7 @@ footer {
 .contacto__mapa {
   margin: 10px;
   padding: 20px;
-  width: 600px;
+  width: 75%;
   border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
@@ -265,7 +268,7 @@ footer {
 
 .formulario {
   margin: 10px;
-  width: 900px;
+  width: 70%;
   border: solid;
   display: -webkit-box;
   display: -ms-flexbox;

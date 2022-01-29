@@ -10,6 +10,7 @@ $colores: (
 
 );
 
+
 @each $valor, $color in $colores{
     .bk--#{$valor}{
         background-color:$color;
@@ -23,22 +24,15 @@ $colores: (
 
 
 }
-/* plantilla grid para la pagina */
+/* aplicando flex a la pagina */
 
 #plantilla{
-    display: grid;
-    grid-template-areas:
-    "menu menu menu"
-    "cuerpo cuerpo cuerpo"
-    "cuerpo cuerpo cuerpo"
-    "pie pie pie";
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(4,auto);
-
+    display: flex;
+    flex-direction: column;
 }
-/* fin plantilla grid para la pagina */
+/* fin aplicando flex a la pagina */
 
-/* configuracion de  header para todas las paginas */
+/* configuracion de  header*/
 
 header{
     height: 100%;
@@ -50,6 +44,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 
     & li{
         display: inline;
@@ -81,47 +76,54 @@ header{
 
 }
 
-/* fin de configuracion de header para todas las paginas */
+/* fin de configuracion de header*/
 
-/* configuracion pie de pagina para todas las paginas */
-footer{
-    grid-area: pie;
-}
+/* configuracion pie de pagina */
+
 .pie{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items:flex-end;
     padding: 10px;
+    
+
+    &__slogan{
+        
+        margin: 5%;
+        max-width: 50%;
+    }
+    &__disc{
+        align-content: center;
+        
+    }
+
+    &__slogan h2{
+        font-size: 150%;
+    }
+    
+    &__redes{
+
+        text-decoration: none;
+
+
+    }
+    &__redes p{
+        color: black;
+        
+    }
+    
 }
 .redes{
     height: 50px;
 }
-/* fin configuracion pie de pagina para todas las paginas */
+/* fin configuracion pie de pagina  */
 
 /* seccion  principal del index */
-.slogan{
-    grid-area: cuerpo;
-    height: 1000px;
-    background-image:url("../recursos/imagenes/siriamainfondo.png") ;
-    background-size: 900px;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &__cubo{
-        border: solid;
-        border-radius: 10%;
-        border-color:$borderColor;
-        background-color: $mainColorTransparent;
-    
-    }
-    &__cubo h1{
-        max-width: 1200px;
-        text-align: center;
-    }
+
+.carousel__index{
+    margin-top:5% ;
+    margin-bottom:5% ;
 
 }
 
@@ -129,63 +131,21 @@ footer{
 
 /* propiedades pantalla de productos */
 
-.cuerpoProduct{
-    grid-area: cuerpo;
+.product{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 10px;
 
-}
+    flex-wrap: wrap;
 
-.cuboProd{
-    display: flex;
-    flex-direction: column;
-    margin: 5%;
-    border: solid;
-    border-color:$borderColor;
-    background-color: $mainColorTransparent;
-    font-size: 150%;
-    max-width: 1100px;
-    align-items: center;
-    // display: grid;
-    // grid-template-areas:
-    // "foto"
-    // "titulo"
-    // "info";
-    // grid-template-columns:  auto;
-    // grid-template-rows: repeat(3,auto);
-    // margin: 5%;
-    // border: solid;
-    // border-color:$borderColor;
-    // background-color: $mainColorTransparent;
-    // font-size: 150%;
-    // max-width: 1300px;
-    
-    &__titulo{
-        // grid-area: titulo;
-        margin-left: 50px;
-        margin-top: 30px;
-    }
+    &__card{
 
-    &__img{
-        width: 300px;
-        // grid-area: foto;
-        margin: 10px;
-        
-    }
-
-    &__info{
-        // grid-area: info;
-        margin-left: 50px;
-        
-    }
-
-    &__info p{
-        margin-bottom: 3%;
+        margin: 1%;
+        border: solid;
+        border-color:$borderColor;
+        background-color: $mainColorTransparent;
     }
 
 }
-
 
 
 /* fin propiedades pantalla de productos */
@@ -193,24 +153,33 @@ footer{
 /* propiedades formulario */
 
 /* mixin para tamaños de mapa*/
-@mixin tamaniosMapa ($margen,$relleno,$ancho){
+@mixin tamaniosMapa ($margen,$ancho,$alto){
     margin: $margen;
-    padding: $relleno;
     width: $ancho;
+    height: $alto;
     
 }
 
-#contact{
-    grid-area: cuerpo;
-}
 .contacto{
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-image:url("../recursos/imagenes/siriamainfondo.png") ;
-    // background-repeat: no-repeat;
-    // background-size: auto;
+
+    &__formulario{
+        margin: 10px;
+        width: 50%;
+        border: solid;
+        display: flex;
+        flex-direction: column;
+        border-color:$borderColor;
+        background-color: $mainColorTransparent;
+        
+        &__boton__enviar{
+            margin-top: 10px;
+            width:75px;
+        }
+    }
 
     &__datosVarios{
         margin: 20px;
@@ -222,7 +191,7 @@ footer{
     }
 
     &__mapa{
-        @include tamaniosMapa(10px,20px,auto);
+        @include tamaniosMapa(10px,90%,50vh);
         border: solid;
         border-color:$borderColor;
         background-color:$mainColorTransparent;
@@ -232,25 +201,3 @@ footer{
     }
 
 }
-
-.formulario{
-    margin: 10px;
-    width: 50%;
-    border: solid;
-    display: flex;
-    flex-direction: column;
-    border-color:$borderColor;
-    background-color: $mainColorTransparent;
-    
-    &__boton__enviar{
-        margin-top: 10px;
-        width:75px;
-    }
-    /* uso de extend para segundo boton*/
-    // &__boton__cancelar{
-    //     @extend .formulario__boton__enviar;
-    //     background-color:$SecondColor ;
-    // }
-
-}
-

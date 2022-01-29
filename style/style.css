@@ -14,25 +14,22 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* plantilla grid para la pagina */
+/* aplicando flex a la pagina */
 #plantilla {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "menu menu menu" "cuerpo cuerpo cuerpo" "cuerpo cuerpo cuerpo" "pie pie pie";
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  -ms-grid-rows: (auto)[4];
-      grid-template-rows: repeat(4, auto);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-/* fin plantilla grid para la pagina */
-/* configuracion de  header para todas las paginas */
+/* fin aplicando flex a la pagina */
+/* configuracion de  header*/
 header {
   height: 100%;
   width: auto;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: menu;
   color: white;
 }
@@ -47,6 +44,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0;
 }
 
 .menu li {
@@ -80,15 +78,8 @@ header {
   padding: 20px;
 }
 
-/* fin de configuracion de header para todas las paginas */
-/* configuracion pie de pagina para todas las paginas */
-footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: pie;
-}
-
+/* fin de configuracion de header*/
+/* configuracion pie de pagina */
 .pie {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,114 +97,60 @@ footer {
   padding: 10px;
 }
 
+.pie__slogan {
+  margin: 5%;
+  max-width: 50%;
+}
+
+.pie__disc {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.pie__slogan h2 {
+  font-size: 150%;
+}
+
+.pie__redes {
+  text-decoration: none;
+}
+
+.pie__redes p {
+  color: black;
+}
+
 .redes {
   height: 50px;
 }
 
-/* fin configuracion pie de pagina para todas las paginas */
+/* fin configuracion pie de pagina  */
 /* seccion  principal del index */
-.slogan {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: cuerpo;
-  height: 1000px;
-  background-image: url("../recursos/imagenes/siriamainfondo.png");
-  background-size: 900px;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.slogan__cubo {
-  border: solid;
-  border-radius: 10%;
-  border-color: #c1a6a069;
-  background-color: #e1d9cfd0;
-}
-
-.slogan__cubo h1 {
-  max-width: 1200px;
-  text-align: center;
+.carousel__index {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* fin seccion  principal del index */
 /* propiedades pantalla de productos */
-.cuerpoProduct {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: cuerpo;
+.product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.cuboProd {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 5%;
+.product__card {
+  margin: 1%;
   border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
-  font-size: 150%;
-  max-width: 1100px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.cuboProd__titulo {
-  margin-left: 50px;
-  margin-top: 30px;
-}
-
-.cuboProd__img {
-  width: 300px;
-  margin: 10px;
-}
-
-.cuboProd__info {
-  margin-left: 50px;
-}
-
-.cuboProd__info p {
-  margin-bottom: 3%;
 }
 
 /* fin propiedades pantalla de productos */
 /* propiedades formulario */
 /* mixin para tamaños de mapa*/
-#contact {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: cuerpo;
-}
-
 .contacto {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -225,6 +162,26 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.contacto__formulario {
+  margin: 10px;
+  width: 50%;
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-color: #c1a6a069;
+  background-color: #e1d9cfd0;
+}
+
+.contacto__formulario__boton__enviar {
+  margin-top: 10px;
+  width: 75px;
 }
 
 .contacto__datosVarios {
@@ -243,8 +200,8 @@ footer {
 
 .contacto__mapa {
   margin: 10px;
-  padding: 20px;
-  width: auto;
+  width: 90%;
+  height: 50vh;
   border: solid;
   border-color: #c1a6a069;
   background-color: #e1d9cfd0;
@@ -254,26 +211,5 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.formulario {
-  margin: 10px;
-  width: 50%;
-  border: solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-color: #c1a6a069;
-  background-color: #e1d9cfd0;
-  /* uso de extend para segundo boton*/
-}
-
-.formulario__boton__enviar {
-  margin-top: 10px;
-  width: 75px;
 }
 /*# sourceMappingURL=style.css.map */
